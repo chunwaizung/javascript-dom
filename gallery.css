@@ -1,0 +1,27 @@
+li {
+	float: left;
+	padding: 1em;
+	list-style: none;
+}
+
+#imageGallery {
+	padding: 0;
+}
+#imageGallery li {
+	display: inline;
+}
+
+div {
+	text-align: center;
+	padding:5px;
+	border:1px solid blue;
+	border-radius: 5px;
+	clear: both;
+}
+
+a {
+	text-decoration: none;
+	color: #c60;
+	background: transparent;
+	font-weight: bold;
+}
