@@ -201,6 +201,8 @@ addLoadEvent(functionB);
 ##脚本的插入位置
 脚本在标记中的位置对页面的初次加载时间有很大影响。一般我们把脚本放在文档的`<head>`区域。这种方法的一个问题是：位于`<head>`块中的脚本会导致浏览器无法并行加载其他文件，如其他脚本或图像。根据http规范，浏览器每次从同一个域名中最多只能同时下载两个文件。而在下载脚本期间，浏览器不会下载其他任何文件。即使是来自不同域名的也不会下载。所有其他资源都要等脚本加载完才会下载。把所有的`<script>`标签都放到文档的末尾，`</body>`标记之前，就可以让页面变得更快。
 
+#动态创建标记
+
 ###document.write()
 
 <img src="image1.png">
@@ -222,6 +224,7 @@ window.onload = function() {
 	var div = document.getElementById("testdiv");
 	var newP = document.createElement("p");
 	var txt = document.createTextNode("nodeName: " + newP.nodeName + " nodeType: " + newP.nodeType);
+	//nodeType为1表示这是一个元素节点
 	div.appendChild(newP);
 	newP.appendChild(txt);
 }
@@ -274,3 +277,21 @@ readyState有5个值<br>
 - 2：加载完毕
 - 3：正在交互
 - 4：完成
+
+访问服务器发送回来的数据要通过两个属性完成，一个是responseText属性，这个属性用于保存文本字符串形式的数据，另一个属性是responseXML属性，用于保存content-type头部中指定为"text/xml"的数据。
+
+
+###Ajax
+主要优势是对页面的请求以异步的方式发送到服务器。服务器不会用整个页面来响应请求，他会在后台处理请求，与此同时用户还能继续浏览页面并与页面交互。
+
+## 第八章
+
+###引用body的方法
+
+```
+//1
+var body = document.getElementsByTagName("body")[0];
+//2
+var body = document.body;
+```
+javascript脚本只应该用来充实文档的内容，要避免使用DOM技术来创建核心内容

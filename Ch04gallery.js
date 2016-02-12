@@ -18,6 +18,7 @@ function insertAfter(newElement, target) {
 		parent.insertBefore(newElement,target.nextsibing);
 	}
 }
+
 //动态添加范例图片和文字说明
 function createDivAndImg(){
 	var description = document.createElement("p");
@@ -30,12 +31,19 @@ function createDivAndImg(){
 	imgDisplay.setAttribute("src","images/krake.jpg");
 	imgDisplay.setAttribute("width","520px");
 
+  
 	var div = document.createElement("div");
 	div.appendChild(description);
 	div.appendChild(imgDisplay);
 	
+	/*
 	var body = document.getElementsByTagName("body")[0];
 	body.appendChild(div);
+	*/
+
+	//第七章新内容,使用insertAfter()
+	var gallery = document.getElementById("imageGallery");
+	insertAfter(div, gallery);
 }
 
 //第六章

@@ -10,4 +10,7 @@ function addLoadEvent(func) {
 	}
 }
 
-addLoadEvent(getNewContent);
+//addLoadEvent(getNewContent);
+addLoadEvent(displayAbbr);
+addLoadEvent(displayCitation);
+addLoadEvent(displayAccesskey);

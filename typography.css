@@ -1,0 +1,21 @@
+	body {
+		font-family: "Helvetica","Arial", sans-serif;
+		font-size: 20px;
+	}
+
+	abbr {
+		color: blue;
+		text-decoration: none;
+		border: 0;
+		font-style: normal;
+	}
+
+	blockquote {
+		font-style: italic;
+		text-indent: 2em;
+	}
+
+	ul {
+		border: solid 1px red;
+		border-radius: 3px;
+	}
